@@ -14,13 +14,9 @@
 
 - The idea is that a user will extract only the values they require from a Stream, and these elements are only produced—invisibly to the user—as and when required. This is a form of a producer-consumer relationship.
 
-- In Java, java.util.Stream represents a stream on which one or more operations can be performed. Stream operations are either intermediate or terminal.
+- In Java, java.util.Stream represents a stream on which one or more operations can be performed. Stream operations are either intermediate or terminal. The terminal operations return a result of a certain type and intermediate operations return the stream itself so we can chain multiple methods in a row to perform the operation in multiple steps.
 
-- The terminal operations return a result of a certain type and intermediate operations return the stream itself so we can chain multiple methods in a row to perform the operation in multiple steps.
-
-- Streams are created on a source, e.g. a java.util.Collection like List or Set. The Map is not supported directly, we can create stream of map keys, values or entries.
-
-- Stream operations can either be executed sequentially or parallel. when performed parallelly, it is called a parallel stream.
+- Streams are created on a source, e.g. a java.util.Collection like List or Set. The Map is not supported directly, we can create stream of map keys, values or entries. Stream operations can either be executed sequentially or parallel. when performed parallelly, it is called a parallel stream.
 
 - Based on the above points, if we list down the various characteristics of Stream, they will be as follows:
 
@@ -30,3 +26,76 @@
  4) Can easily be aggregated as arrays or lists
  5) Lazy access supported
  6) Parallelizable
+
+# Creating Streams
+
+- Stream.of()
+- Stream.of(array)
+- List.stream()
+- Stream.generate() or Stream.iterate()
+- Stream of String chars or tokens
+
+# Stream Collectors
+
+- Collect Stream elements to a List
+- Collect Stream elements to an Array
+
+# Stream Operations
+
+# Intermediate Operations
+
+- filter()
+- map()
+- flatMap()
+- distinct()
+- sorted()
+- peek()
+- limit()
+- skip()
+
+# Terminal operations
+
+- match()
+- stream()
+- forEach()
+- forEachOrdered()
+- toArray()
+- reduce()
+- collect()
+- min()
+- max()
+- count()
+- anyMatch()
+- allMatch()
+- noneMatch()
+- findFirst()
+- findLast()
+- findAny()
+
+# Stream Short-circuit Operations
+
+- anyMatch()
+- findFirst()
+- findLast() -> Guava Library Function
+- noneMatch()
+- allMatch()
+- parallel()
+- sequential()
+- concat()
+- iterate()
+- boxed()
+- generate() -> To generate a stream
+- negate() -> method provided by IntPredicate Class
+
+# Improvements in JAVA 9
+
+- takeWhile()
+- dropWhile()
+- ofNullable()
+- Overloading iterate() method
+
+# Parallelism in Java Steam
+
+- With the Fork/Join framework added in Java SE 7, we have efficient machinery for implementing parallel operations in our applications. But implementing a fork/join framework is itself a complex task, and if not done right; it is a source of complex multi-threading bugs having the potential to crash the application. With the introduction of internal iterations, we got the possibility of operations to be done in parallel more efficiently. To enable parallelism, all we have to do is to create a parallel stream, instead of a sequential stream.
+
+- While the Java platform provides strong support for concurrency and parallelism already, developers face unnecessary impediments in migrating their code from sequential to parallel as needed.
