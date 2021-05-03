@@ -1,1 +1,1 @@
-# StreamsAPI_JAVA8
+# Streams API
