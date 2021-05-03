@@ -1,5 +1,7 @@
 # Streams API
 
+- This module created by me is about Streams API introduced after JAVA 8. I have learnt and Practiced the Usecase Examples and I find it very useful also for my friends, so i have added the contents in this public repository.
+
 # Java 8 Stream API
 
 - A Stream in Java 8 can be defined as a sequence of elements from a source. Streams supports aggregate operations on the elements. The source of elements here refers to a Collection or Array that provides data to the Stream.
