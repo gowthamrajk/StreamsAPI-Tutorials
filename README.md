@@ -84,6 +84,8 @@
 - concat()
 - iterate()
 - boxed()
+- builder() -> to build fixed length stream
+- accept() -> to accept input for a fixed length stream
 - generate() -> To generate a stream
 - negate() -> method provided by IntPredicate Class
 
